@@ -20,7 +20,6 @@
   --color-line: rgba(255, 255, 255, 0.22);
   --color-error: #ff8a80;
   --color-success: #8be3a8;
-  --color-placeholder: #ff5ac8; /* рамка для елементів-заглушок */
 
   --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.03) 100%);
   --glass-bg-strong: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 100%);
@@ -30,8 +29,6 @@
 
   --input-bg: rgba(255, 255, 255, 0.08);
   --input-border: rgba(255, 255, 255, 0.3);
-  --btn-ghost-bg: rgba(255, 255, 255, 0.1);
-  --btn-ghost-border: rgba(255, 255, 255, 0.24);
 
   /* Шрифти: фірмові (якщо встановлені) → Google Fonts → системні */
   --font-display: 'Neuropol X', 'Unbounded', sans-serif;
@@ -640,9 +637,22 @@ a {
 .form__status {
   padding: var(--space-xs) var(--space-s);
   border-radius: var(--radius-s);
-  border: 1px dashed var(--color-placeholder);
+  border: 1px solid currentColor;
   font-size: 15px;
   line-height: 1.45;
+}
+
+.form__status--success {
+  color: var(--color-success);
+}
+
+.form__status--error {
+  color: var(--color-error);
+}
+
+.form__submit[disabled] {
+  opacity: 0.6;
+  cursor: progress;
 }
 
 .form__status[hidden] {
@@ -673,59 +683,9 @@ a {
   gap: 0 20px;
 }
 
-.socials {
-  display: flex;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.social {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--tap);
-  height: var(--tap);
-  border: 1px solid var(--btn-ghost-border);
-  border-radius: var(--radius-s);
-  background: var(--btn-ghost-bg);
-  font-size: 17px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
-}
-
-.social svg {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.social:active {
-  background: rgba(255, 255, 255, 0.32);
-  transform: scale(0.95);
-}
-
-@media (hover: hover) {
-  .social:hover {
-    background: rgba(255, 255, 255, 0.24);
-    border-color: rgba(255, 255, 255, 0.45);
-  }
-}
-
 .footer__copy {
   font-size: 14px;
   color: var(--color-text-soft);
-}
-
-/* ЗАГЛУШКА: видима позначка для елементів, які треба замінити реальними даними.
-   Коли підставите справжні посилання — приберіть клас is-placeholder в HTML. */
-.is-placeholder {
-  outline: 2px dashed var(--color-placeholder);
-  outline-offset: 2px;
 }
 
 /* =========================================================

@@ -40,15 +40,6 @@
 })();
 
 /* =========================================================
-   Посилання-заглушки: не стрибаємо на початок сторінки
-   ========================================================= */
-document.querySelectorAll('[data-placeholder]').forEach(function (link) {
-  link.addEventListener('click', function (event) {
-    event.preventDefault();
-  });
-});
-
-/* =========================================================
    Форма заявки
    ========================================================= */
 (function initForm() {
@@ -56,6 +47,7 @@ document.querySelectorAll('[data-placeholder]').forEach(function (link) {
   if (!form) return;
 
   const status = document.getElementById('form-status');
+  const submitButton = form.querySelector('.form__submit');
 
   // Правила перевірки для кожного поля: повертають текст помилки або ''
   const validators = {
@@ -129,20 +121,50 @@ document.querySelectorAll('[data-placeholder]').forEach(function (link) {
       return;
     }
 
-    sendRequest({
-      phone: form.elements.phone.value.trim(),
-      instagram: form.elements.instagram.value.trim()
-    });
+    sendRequest();
   });
 
-  /* ЗАГЛУШКА: сервер для заявок ще не підключений.
-     Тут має бути відправлення даних, наприклад:
-       fetch('АДРЕСА_ОБРОБНИКА', { method: 'POST', body: JSON.stringify(data) })
-     Доки його немає — показуємо чесне повідомлення, що заявку не відправлено. */
-  function sendRequest(data) {
-    status.textContent =
-      'ЗАГЛУШКА: поля заповнено правильно, але форма ще не підключена до сервера — заявку не відправлено.';
+  function showStatus(type, message) {
+    status.className = 'form__status form__status--' + type;
+    status.textContent = message;
     status.hidden = false;
-    console.info('[заглушка] Дані заявки, які мали б піти на сервер:', data);
+  }
+
+  // Надсилаємо заявку у Formspree (адреса — в атрибуті action форми)
+  async function sendRequest() {
+    const data = new FormData(form);
+    data.set('phone', data.get('phone').trim());
+    data.set('instagram', data.get('instagram').trim());
+    data.append('_subject', 'Нова заявка з сайту');
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Надсилаємо…';
+    status.hidden = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        showStatus('success', 'Дякуємо! Заявку надіслано, ми зв\'яжемося з вами найближчим часом.');
+        return;
+      }
+
+      // Formspree повертає опис помилки у JSON
+      const result = await response.json().catch(function () { return {}; });
+      const details = result.errors && result.errors.length
+        ? ' (' + result.errors.map(function (e) { return e.message; }).join(', ') + ')'
+        : '';
+      showStatus('error', 'Не вдалося надіслати заявку' + details + '. Спробуйте ще раз трохи пізніше.');
+    } catch (error) {
+      showStatus('error', 'Не вдалося надіслати заявку: перевірте підключення до інтернету й спробуйте ще раз.');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Залишити заявку';
+    }
   }
 })();

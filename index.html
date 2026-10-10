@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Лендінг AI-студії — сайти у 10 разів швидше</title>
   <meta name="description" content="Створюю лендинги, сайти-візитки та інтернет-магазини за допомогою штучного інтелекту — швидше та дешевше, ніж ти звик.">
+  <!-- Пробний сайт: просимо пошуковики не показувати його в результатах -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/logo.png" type="image/png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -149,7 +153,8 @@
             <p class="request__text">Залиште заявку, і наш менеджер зв'яжеться з вами.</p>
           </div>
 
-          <form class="form" id="request-form" novalidate>
+          <!-- Заявки надсилаються через Formspree: адреса форми — в action -->
+          <form class="form" id="request-form" action="https://formspree.io/f/xqpebybp" method="POST" novalidate>
             <div class="field">
               <label class="field__label" for="phone">Номер телефону <span class="field__req" aria-hidden="true">*</span></label>
               <input class="field__input" id="phone" name="phone" type="tel" autocomplete="tel"
@@ -168,7 +173,6 @@
 
             <button class="btn btn--accent btn--lg form__submit" type="submit">Залишити заявку</button>
 
-            <!-- ЗАГЛУШКА: форма ще не підключена до сервера, див. script.js → sendRequest() -->
             <p class="form__status" id="form-status" role="status" hidden></p>
           </form>
         </div>
@@ -187,27 +191,6 @@
           <a class="nav__link" href="#process">Як я працюю</a>
           <a class="nav__link" href="#about">Про мене</a>
         </nav>
-
-        <!-- ЗАГЛУШКИ: реальних посилань на соцмережі в макеті немає.
-             Замініть href="#" на справжні адреси й приберіть клас is-placeholder та data-placeholder. -->
-        <ul class="socials" aria-label="Соцмережі">
-          <li>
-            <a class="social is-placeholder" href="#" data-placeholder aria-label="Instagram (посилання-заглушка)" title="Заглушка: додайте посилання на Instagram">
-              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3.5L9 6h6l1.5 2H20v11H4z"/><circle cx="12" cy="13" r="3.4"/></svg>
-            </a>
-          </li>
-          <li>
-            <a class="social is-placeholder" href="#" data-placeholder aria-label="Telegram (посилання-заглушка)" title="Заглушка: додайте посилання на Telegram">
-              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L3 10.5l6.5 2.5L12 20l9-17zM9.5 13L21 3"/></svg>
-            </a>
-          </li>
-          <li>
-            <a class="social is-placeholder" href="#" data-placeholder aria-label="LinkedIn (посилання-заглушка)" title="Заглушка: додайте посилання на LinkedIn">in</a>
-          </li>
-          <li>
-            <a class="social is-placeholder" href="#" data-placeholder aria-label="Behance (посилання-заглушка)" title="Заглушка: додайте посилання на Behance">Be</a>
-          </li>
-        </ul>
       </div>
 
       <p class="footer__copy">© 2026. Усі права захищені.</p>
