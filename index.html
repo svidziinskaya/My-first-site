@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лендінг AI-студії — сайти у 10 разів швидше</title>
+  <meta name="description" content="Створюю лендинги, сайти-візитки та інтернет-магазини за допомогою штучного інтелекту — швидше та дешевше, ніж ти звик.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;600&family=Onest:wght@400;600&family=Unbounded:wght@500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до змісту</a>
+
+  <!-- Декоративний фон: синій градієнт + зерно -->
+  <div class="page-bg" aria-hidden="true">
+    <div class="page-bg__tile"></div>
+    <div class="page-bg__tile page-bg__tile--flip"></div>
+    <div class="page-bg__tile"></div>
+    <div class="page-bg__grain"></div>
+  </div>
+
+  <div class="page" id="top">
+    <!-- ===== HERO ===== -->
+    <div class="hero">
+      <img class="hero__photo" src="images/hero-portrait.webp" width="1220" height="1514"
+           alt="Арт-портрет: обличчя чоловіка, обвите щупальцями восьминога">
+
+      <div class="hero__inner container">
+        <header class="header" data-menu>
+          <div class="header__bar">
+            <a class="header__logo" href="#top" aria-label="На початок сторінки">
+              <img src="images/logo.png" width="49" height="34" alt="Логотип студії">
+            </a>
+
+            <nav class="nav" aria-label="Розділи">
+              <a class="nav__link" href="#services">Послуги</a>
+              <a class="nav__link" href="#process">Як я працюю</a>
+              <a class="nav__link" href="#about">Про мене</a>
+            </nav>
+
+            <a class="btn btn--accent btn--sm header__cta" href="#request">Залишити заявку</a>
+
+            <button class="burger" type="button" aria-label="Відкрити меню"
+                    aria-expanded="false" aria-controls="mobile-menu">
+              <svg class="burger__icon burger__icon--open" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+              <svg class="burger__icon burger__icon--close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+          </div>
+
+          <nav class="mobile-menu" id="mobile-menu" aria-label="Мобільне меню" hidden>
+            <a class="mobile-menu__link" href="#services">Послуги</a>
+            <a class="mobile-menu__link" href="#process">Як я працюю</a>
+            <a class="mobile-menu__link" href="#about">Про мене</a>
+            <a class="btn btn--accent btn--block" href="#request">Залишити заявку</a>
+          </nav>
+        </header>
+
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Створюємо сайти в <span class="accent">10&nbsp;разів швидше</span>, ніж конкуренти
+          </h1>
+          <p class="hero__lead">
+            Я створюю сайти за допомогою штучного інтелекту — швидше та дешевше, ніж ти звик.
+          </p>
+          <a class="btn btn--accent btn--lg" href="#request">Залишити заявку</a>
+        </div>
+      </div>
+
+      <div class="hero__marquee" aria-hidden="true">
+        <span>VIBE CODING</span>
+      </div>
+    </div>
+
+    <main id="main">
+      <!-- ===== ПОСЛУГИ ===== -->
+      <section class="services" id="services" aria-labelledby="services-title">
+        <h2 class="h2" id="services-title">Послуги</h2>
+        <ul class="services__list">
+          <li class="service">
+            <span class="service__num" aria-hidden="true">01</span>
+            <h3 class="service__title">Лендинги та сайти-візитки</h3>
+            <p class="service__text">Односторінковий сайт, який за кілька секунд пояснює, чим ти займаєшся, і веде відвідувача до заявки. Адаптивний під телефон і готовий до запуску реклами.</p>
+          </li>
+          <li class="service">
+            <span class="service__num" aria-hidden="true">02</span>
+            <h3 class="service__title">Інтернет-магазини</h3>
+            <p class="service__text">Каталог, картки товарів, кошик і оформлення замовлення — зручно і з комп'ютера, і з телефона.</p>
+          </li>
+          <li class="service">
+            <span class="service__num" aria-hidden="true">03</span>
+            <h3 class="service__title">Візуальні елементи для твого бізнесу за допомогою ШІ</h3>
+            <p class="service__text">Зображення, банери та графіка для сайту й соцмереж у єдиному стилі твого бренду — без фотозйомок і стокових картинок.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===== ЯК Я ПРАЦЮЮ ===== -->
+      <section class="section container" id="process" aria-labelledby="process-title">
+        <h2 class="h2" id="process-title">Як я працюю</h2>
+        <ol class="steps">
+          <li class="step glass">
+            <span class="step__num" aria-hidden="true">01</span>
+            <div class="step__body">
+              <h3 class="step__title">Брифінг</h3>
+              <p class="step__text">Розпитую про твій бізнес, клієнтів і цілі сайту. Фіксуємо структуру, терміни та вартість.</p>
+            </div>
+          </li>
+          <li class="step glass">
+            <span class="step__num" aria-hidden="true">02</span>
+            <div class="step__body">
+              <h3 class="step__title">Створення дизайну</h3>
+              <p class="step__text">Проєктую структуру та візуальний стиль сторінок і показую тобі макет. Правки вносимо ще до розробки.</p>
+            </div>
+          </li>
+          <li class="step glass">
+            <span class="step__num" aria-hidden="true">03</span>
+            <div class="step__body">
+              <h3 class="step__title">Розробка</h3>
+              <p class="step__text">Перетворюю затверджений макет на робочий сайт за допомогою ШІ. Адаптую його під телефони й перевіряю кожну сторінку.</p>
+            </div>
+          </li>
+          <li class="step glass">
+            <span class="step__num" aria-hidden="true">04</span>
+            <div class="step__body">
+              <h3 class="step__title">Деплой</h3>
+              <p class="step__text">Публікую сайт на твоєму домені, підключаю форму заявок і перевіряю, що все працює.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ===== ПРО МЕНЕ ===== -->
+      <section class="section container about" id="about" aria-labelledby="about-title">
+        <h2 class="h2 about__title" id="about-title">Про мене</h2>
+        <div class="about__card glass">
+          <p class="about__text">Я 3 роки працювала UX/UI-дизайнером, створювала сайти та співпрацювала з відомими українськими бізнесами, але з часом зрозуміла, що хочу робити не лише якісний дизайн. Я хочу взяти на себе всю роботу над сайтом і робити це втричі швидше.</p>
+          <p class="about__quote">Саме тому я обрала для себе шлях — <span class="accent">Vibe Coding</span>.</p>
+        </div>
+      </section>
+
+      <!-- ===== ЗАЯВКА ===== -->
+      <section class="section section--last container" id="request" aria-labelledby="request-title">
+        <div class="request glass">
+          <div class="request__intro">
+            <h2 class="h2" id="request-title">Залишити заявку</h2>
+            <p class="request__text">Залиште заявку, і наш менеджер зв'яжеться з вами.</p>
+          </div>
+
+          <form class="form" id="request-form" novalidate>
+            <div class="field">
+              <label class="field__label" for="phone">Номер телефону <span class="field__req" aria-hidden="true">*</span></label>
+              <input class="field__input" id="phone" name="phone" type="tel" autocomplete="tel"
+                     inputmode="tel" placeholder="Номер із кодом країни" required
+                     aria-describedby="phone-error">
+              <p class="field__error" id="phone-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="instagram">Instagram <span class="field__opt">(необов'язково)</span></label>
+              <input class="field__input" id="instagram" name="instagram" type="text"
+                     autocomplete="off" autocapitalize="off" spellcheck="false"
+                     placeholder="@нікнейм" aria-describedby="instagram-error">
+              <p class="field__error" id="instagram-error" aria-live="polite"></p>
+            </div>
+
+            <button class="btn btn--accent btn--lg form__submit" type="submit">Залишити заявку</button>
+
+            <!-- ЗАГЛУШКА: форма ще не підключена до сервера, див. script.js → sendRequest() -->
+            <p class="form__status" id="form-status" role="status" hidden></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer container">
+      <div class="footer__row">
+        <a class="header__logo" href="#top" aria-label="На початок сторінки">
+          <img src="images/logo.png" width="49" height="34" alt="Логотип студії">
+        </a>
+
+        <nav class="footer__nav" aria-label="Меню у футері">
+          <a class="nav__link" href="#services">Послуги</a>
+          <a class="nav__link" href="#process">Як я працюю</a>
+          <a class="nav__link" href="#about">Про мене</a>
+        </nav>
+
+        <!-- ЗАГЛУШКИ: реальних посилань на соцмережі в макеті немає.
+             Замініть href="#" на справжні адреси й приберіть клас is-placeholder та data-placeholder. -->
+        <ul class="socials" aria-label="Соцмережі">
+          <li>
+            <a class="social is-placeholder" href="#" data-placeholder aria-label="Instagram (посилання-заглушка)" title="Заглушка: додайте посилання на Instagram">
+              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3.5L9 6h6l1.5 2H20v11H4z"/><circle cx="12" cy="13" r="3.4"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="social is-placeholder" href="#" data-placeholder aria-label="Telegram (посилання-заглушка)" title="Заглушка: додайте посилання на Telegram">
+              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L3 10.5l6.5 2.5L12 20l9-17zM9.5 13L21 3"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="social is-placeholder" href="#" data-placeholder aria-label="LinkedIn (посилання-заглушка)" title="Заглушка: додайте посилання на LinkedIn">in</a>
+          </li>
+          <li>
+            <a class="social is-placeholder" href="#" data-placeholder aria-label="Behance (посилання-заглушка)" title="Заглушка: додайте посилання на Behance">Be</a>
+          </li>
+        </ul>
+      </div>
+
+      <p class="footer__copy">© 2026. Усі права захищені.</p>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
